@@ -1,0 +1,9 @@
+Package: me.chewitt.squirrel
+Name: Squirrel
+Depends: mobilesubstrate, firmware (>=8.0)
+Version: 1.0.1
+Architecture: iphoneos-arm
+Description: Blurred home screen on lock screen.
+Maintainer: Charlie Hewitt
+Author: Charlie Hewitt
+Section: Tweaks
