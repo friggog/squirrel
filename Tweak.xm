@@ -119,9 +119,6 @@ static BOOL needsOverrideIconScatterAnimation = NO;
 			%orig;
 			needsOverrideIconScatterAnimation = YES;
 			[self endAnimation];
-			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-				needsOverrideIconScatterAnimation = NO;
-			});
 		}];
 	 }
 	 else {
@@ -150,6 +147,7 @@ static BOOL needsOverrideIconScatterAnimation = NO;
 - (void)restoreContentAndUnscatterIconsAnimated:(BOOL)arg1 withCompletion:(/*^block*/id)arg2 {
 	// stop icon scatter for passcode animation
 	%orig(needsOverrideIconScatterAnimation?NO:arg1,arg2);
+	needsOverrideIconScatterAnimation = NO;
 }
 
 %end
